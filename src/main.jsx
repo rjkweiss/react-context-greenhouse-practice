@@ -3,15 +3,21 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css'
 import App from './App.jsx'
+import ThemeProvider from './context/ThemeContext.jsx';
 
 const Root = () => {
   return (
-    <StrictMode>
+    <ThemeProvider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </StrictMode>
+    </ThemeProvider>
+
   );
 };
 
-createRoot(document.getElementById('root')).render(<Root />);
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <Root />
+  </StrictMode>
+);

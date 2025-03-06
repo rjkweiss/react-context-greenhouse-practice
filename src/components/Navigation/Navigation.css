@@ -1,0 +1,21 @@
+nav {
+    align-items: center;
+    display: flex;
+    height: 50px;
+    width: 100%;
+}
+
+nav a {
+    align-items: center;
+    color: black;
+    display: block;
+    justify-content: center;
+    margin: 20px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+nav a.active {
+    color: white;
+    background-color: black;
+}

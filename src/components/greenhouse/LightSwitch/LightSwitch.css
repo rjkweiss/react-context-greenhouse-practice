@@ -1,0 +1,28 @@
+.light-switch {
+    height: 100px;
+    width: 60px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.light-switch .on,
+.light-switch .off {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 100%;
+}
+
+.light-switch.day .on,
+.light-switch.night .off {
+    background-color: white;
+}
+
+.light-switch.night .on,
+.light-switch.day .off {
+    background-color: grey;
+    cursor: pointer;
+}

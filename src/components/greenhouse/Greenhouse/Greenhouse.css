@@ -1,0 +1,10 @@
+
+.greenhouse {
+    margin-top: 20px;
+    position: relative;
+}
+
+.greenhouse img {
+    max-width: 100%;
+    max-height: 100%;
+}

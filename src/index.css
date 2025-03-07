@@ -1,1 +1,9 @@
 /* TODO: site-wide styling */
+@import url('https://fonts.googleapis.com/css2?family=Delius&family=Playwrite+DE+SAS:wght@100..400&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    font-family: "Delius", cursive;
+    margin: 20px 0;
+}

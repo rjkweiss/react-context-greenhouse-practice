@@ -1,21 +1,25 @@
 import { Routes, Route } from 'react-router-dom';
-
 import Navigation from './components/Navigation/Navigation';
+import Greenhouse from './components/greenhouse/Greenhouse/Greenhouse';
+import Thermometer from './components/Thermometer/Thermometer';
+import Hygrometer from './components/Hygrometer/Hygrometer';
 
 
 function App() {
 
   return (
     <>
-    <h1>Hello from App!</h1>
+    {/* nav component for the whole application */}
     <Navigation />
+
+    {/* routes for navigation */}
     <Routes>
-      <Route path='/' element={<h1>Placeholder for GreenHouse</h1>} />
-      <Route path='/thermometer' element={<h1>Placeholder for Thermometer</h1>} />
-      <Route path='/hygrometer' element={<h1>Placeholder for Hygrometer</h1>} />
+      <Route path='/' element={<Greenhouse/>} />
+      <Route path='/thermometer' element={<Thermometer/>} />
+      <Route path='/hygrometer' element={<Hygrometer/>} />
     </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

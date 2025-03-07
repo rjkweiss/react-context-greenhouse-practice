@@ -1,12 +1,30 @@
 import Slider from 'rc-slider';
-import "rc-slider/assets/index.css";
+import { useState, useEffect } from 'react';
 import { useClimate } from '../../context/ClimateContext';
+import "rc-slider/assets/index.css";
 import './Thermometer.css';
 
 const Thermometer = () => {
 
     // get temperature value from context
     const { temperature, setTemperature } = useClimate();
+
+    // track desired temperature
+    const [desiredTemp, setDesiredTemp] = useState(temperature);
+
+    useEffect(() => {
+        // if we have reached the ideal temp, stop updating
+        if (temperature === desiredTemp) return;
+
+        // adjust the actual temp by 1°F per second
+        const timer = setTimeout(() => {
+            setTemperature((currTemp) => currTemp < desiredTemp ? currTemp + 1 : currTemp - 1);
+        }, 1000);
+
+        // clear out the timer
+        return () => clearTimeout(timer);
+
+    }, [temperature, desiredTemp]);
 
     return (
         <div className="thermometer">
@@ -20,8 +38,8 @@ const Thermometer = () => {
                     vertical
                     min={0}
                     max={120}
-                    value={temperature}
-                    onChange={setTemperature}
+                    value={desiredTemp}
+                    onChange={setDesiredTemp}
                     styles={{
                         rail: {
                             backgroundColor: "gray",

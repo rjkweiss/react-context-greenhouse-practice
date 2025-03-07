@@ -1,6 +1,6 @@
-import './ClimateStats.css';
-
 import { useClimate } from '../../../context/ClimateContext';
+
+import './ClimateStats.css';
 
 const ClimateStats = () => {
     const { temperature, humidity } = useClimate();

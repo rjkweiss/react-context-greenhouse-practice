@@ -12,8 +12,11 @@ const ClimateProvider = ({ children }) => {
     // state variable to keep track of temperature changes; default 50
     const [temperature, setTemperature] = useState(50);
 
+    // read and set humidity
+    const [humidity, setHumidity] = useState(40);
+
     return (
-        <ClimateContext.Provider value={{ temperature, setTemperature }}>
+        <ClimateContext.Provider value={{ temperature, setTemperature, humidity, setHumidity }}>
             { children }
         </ClimateContext.Provider>
     );

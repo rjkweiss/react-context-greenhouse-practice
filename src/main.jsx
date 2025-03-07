@@ -4,13 +4,16 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css'
 import App from './App.jsx'
 import ThemeProvider from './context/ThemeContext.jsx';
+import ClimateProvider from './context/ClimateContext.jsx';
 
 const Root = () => {
   return (
     <ThemeProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <ClimateProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ClimateProvider>
     </ThemeProvider>
 
   );
